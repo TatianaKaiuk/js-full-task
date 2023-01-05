@@ -1,0 +1,24 @@
+{
+  "name": "js-full-tast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TatianaKaiuk/js-full-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TatianaKaiuk/js-full-task/issues"
+  },
+  "homepage": "https://github.com/TatianaKaiuk/js-full-task#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2"
+  }
+}

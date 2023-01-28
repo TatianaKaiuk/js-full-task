@@ -4,7 +4,7 @@ export function reverseArray(arr) {
   }
   return arr.slice().reverse();
 }
-reverseArray([1, 2, 3, 4, 5]);
+reverseArray([1, 2, 3, 4, 5]); // [5, 4, 3, 2, 1]
 //
 export function withdraw(clients, balances, client, amount) {
   const index = clients.indexOf(client);

@@ -16,12 +16,15 @@ const logGreySpan = logTarget.bind(null, 'SPAN', 'grey');
 
 divElem.addEventListener('click', logGreyDiv, true);
 divElem.addEventListener('click', logGreenDiv);
+divElem.removeEventListener('click', logGreenDiv);
 
 pElem.addEventListener('click', logGreyP, true);
 pElem.addEventListener('click', logGreenP);
+pElem.removeEventListener('click', logGreenP);
 
 spanElem.addEventListener('click', logGreySpan, true);
 spanElem.addEventListener('click', logGreenSpan);
+spanElem.removeEventListener('click', logGreenSpan);
 
 //  для очистки поля
 const clearEl = document.querySelector('.clear-btn');
@@ -33,8 +36,6 @@ clearEl.addEventListener('click', clear);
 const remove = document.querySelector('.remove-handlers-btn');
 
 function removed() {
-  divElem.removeEventListener('click', logGreenDiv);
-  pElem.removeEventListener('click', logGreenP);
-  spanElem.removeEventListener('click', logGreenSpan);
+  eventsListElem.onclick = null;
 }
 remove.addEventListener('click', removed);

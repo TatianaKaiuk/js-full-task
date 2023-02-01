@@ -33,16 +33,24 @@ clearEl.addEventListener('click', clear);
 const remove = document.querySelector('.remove-handlers-btn');
 
 function removed() {
+  divElem.removeEventListener('click', logGreenDiv, true);
   divElem.removeEventListener('click', logGreenDiv);
+  pElem.removeEventListener('click', logGreenP, true);
   pElem.removeEventListener('click', logGreenP);
+  spanElem.removeEventListener('click', logGreenSpan, true);
   spanElem.removeEventListener('click', logGreenSpan);
 }
 remove.addEventListener('click', removed);
 //
 const on = document.querySelector('.attach-handlers-btn');
 function attach() {
+  divElem.addEventListener('click', logGreyDiv, true);
   divElem.addEventListener('click', logGreenDiv);
+
+  pElem.addEventListener('click', logGreyP, true);
   pElem.addEventListener('click', logGreenP);
+
+  spanElem.addEventListener('click', logGreySpan, true);
   spanElem.addEventListener('click', logGreenSpan);
 }
 on.addEventListener('cilck', attach);

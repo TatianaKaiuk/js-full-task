@@ -16,6 +16,7 @@ const logGreySpan = logTarget.bind(null, 'SPAN', 'grey');
 
 divElem.addEventListener('click', logGreyDiv, true);
 divElem.addEventListener('click', logGreenDiv);
+
 pElem.addEventListener('click', logGreyP, true);
 pElem.addEventListener('click', logGreenP);
 
@@ -32,6 +33,8 @@ clearEl.addEventListener('click', clear);
 const remove = document.querySelector('.remove-handlers-btn');
 
 function removed() {
-  eventsListElem.onclick = null;
+  divElem.removeEventListener('click', logGreenDiv);
+  pElem.removeEventListener('click', logGreenP);
+  spanElem.removeEventListener('click', logGreenSpan);
 }
 remove.addEventListener('click', removed);

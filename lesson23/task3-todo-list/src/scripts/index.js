@@ -1,16 +1,15 @@
-
-import { newList } from './todo-list.js';
+import { initTodoListHandlers } from './todoList.js';
 import { renderTasks } from './render.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderTasks();
-  newList();
+  initTodoListHandlers();
 });
 
-const onStorageChange = (e) => {
-  if (e.key === 'tasksList') {
-    renderTasks();
-  }
-};
+// const onStorageChange = (e) => {
+//   if (e.key === 'tasksList') {
+//     renderTasks();
+//   }
+// };
 
-window.addEventListener('storage', onStorageChange);
+// window.addEventListener('storage', onStorageChange);

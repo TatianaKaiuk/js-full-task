@@ -1,5 +1,5 @@
 import { renderTasks } from './render.js';
-import { setItem, getItem } from './storage';
+import { setItem, getItem } from './storage.js';
 
 // const listElem = document.querySelector('.list');
 

@@ -18,6 +18,7 @@ export function newList() {
   const newTasksList = tasksList.concat({
     text: inputValue,
     done: false,
+    createDate: new Date().toISOString(),
     id: Math.floor(Math.random() * (100 - 1) + 1).toString(),
   });
 

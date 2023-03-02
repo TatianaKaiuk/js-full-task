@@ -1,5 +1,5 @@
-import { newList } from './createTask';
-import { clickOnCheckbox } from './checkbox';
+import { newList } from './createTask.js';
+import { clickOnCheckbox } from './checkbox.js';
 
 export const initTodoListHandlers = () => {
   const createBtnElem = document.querySelector('.create-task-btn');

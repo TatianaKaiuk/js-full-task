@@ -1,4 +1,4 @@
-import { setItem, getItem } from './storage';
+import { setItem, getItem } from './storage.js';
 
 const listElem = document.querySelector('.list');
 
@@ -29,7 +29,7 @@ export const renderTasks = () => {
 
   listElem.innerHTML = '';
   const tasksElems = tasksList
-    .sort((a, b) => a.done - b.done)
+    .sort((a, b) => a.createDate - b.createDate)
     .map(createListItem);
   listElem.append(...tasksElems);
 };

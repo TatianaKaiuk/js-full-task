@@ -26,8 +26,8 @@ const onImageLoaded = (error, data) => {
   const sizeElem = document.querySelector('.image-size');
   sizeElem.textContent = `${width} x ${height}`;
 };
-onImageLoaded();
-//  console.log(addImage(imgSrc, onImageLoaded));
+
+// addImage(imgSrc, onImageLoaded);
 
 // examples
 // addImage(

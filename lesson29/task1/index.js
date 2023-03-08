@@ -6,8 +6,8 @@ export const addImage = (imgSrc, callback) => {
   containerElem.append(imgElem);
 
   const onImageLoaded = () => {
-   // const { width, height } = imgElem;
-    callback(null, imgElem);
+    const { width, height } = imgElem;
+    callback(null, { width, height });
   };
 
   imgElem.addEventListener('load', onImageLoaded);
@@ -27,7 +27,7 @@ const onImageLoaded = (error, data) => {
   sizeElem.textContent = `${width} x ${height}`;
 };
 
-addImage(imgSrc, onImageLoaded);
+// addImage(imgSrc, onImageLoaded);
 
 // examples
 // addImage(

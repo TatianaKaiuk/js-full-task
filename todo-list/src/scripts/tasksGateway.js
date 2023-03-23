@@ -1,4 +1,4 @@
-const baseUrl = `https://crudcrud.com/api/3f0f545c188742768e41da290650c16c/tasks`;
+const baseUrl = `https://6416cdc647092b8b613500f9.mockapi.io/api/v1/tasks`;
 
 const mapTasks = (tasks) => {
   tasks.map(({ _id, ...rest }) => ({ ...rest, id: _id })); // перезаписуем id в нужном формате, в котором генерирует браузер
@@ -7,8 +7,8 @@ const mapTasks = (tasks) => {
 export const getTasksList = () => {
   // получаем данные с сервера
   return fetch(baseUrl)
-    .then((response) => response.json())
-    .then((tasks) => mapTasks(tasks));
+    .then((resoponse) => resoponse.json())
+    .then((tasks) => mapTasks);
 };
 
 export const createTask = (taskData) => {

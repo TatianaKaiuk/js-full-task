@@ -16,6 +16,7 @@ export function newList() {
     done: false,
     createDate: new Date().toISOString(),
   };
+  console.log(newTask);
 
   createTask(newTask) // вызываем функ на изминения данных
     .then(() => getTasksList()) // получаем данные

@@ -5,13 +5,14 @@ import { getTasksList, updateTask } from './tasksGateway.js';
 // const listElem = document.querySelector('.list');
 
 export const clickOnCheckbox = (event) => {
-  const isCheckbox = event.target.classList.contains('list-item-checkbox');
+  const isCheckbox = event.target.classList.contains('list-item__checkbox');
 
   if (!isCheckbox) {
     return;
   }
 
-  const taskId = event.target.dataset.id;
+  const taskId = event.terget.dataset.id;
+
   const tasksList = getItem('tasksList');
   const { text, createData } = tasksList.find((task) => task.id === taskId);
   const done = event.target.checked;
@@ -30,5 +31,3 @@ export const clickOnCheckbox = (event) => {
       renderTasks();
     });
 };
-
-

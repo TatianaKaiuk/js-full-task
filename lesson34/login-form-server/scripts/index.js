@@ -10,21 +10,31 @@ btnElem.setAttribute('disabled', Boolean);
 
 const formData = Object.fromEntries(new FormData(formElem));
 
-const changeElem = (data) => {
-  data.array.forEach((element) => {
-    if (element.reportValidity()) {
-      btnElem.disabled = false;
-    }
-  });
-};
+// const changeElem = (data) => {
+//   data.array.forEach((element) => {
+//     if (element.reportValidity()) {
+//       btnElem.disabled = false;
+//     }
+//   });
+// };
 // changeElem(formData);
+// imputElem.addEventListener('change', changeElem(formData));
+
+imputElem.addEventListener(
+  'submit',
+  function () {
+    imputElem.reportValidity();
+  },
+  false
+);
+
+
 
 const sendingData = () => {
   createData(formData);
   formElem.reset('');
 };
 
-imputElem.addEventListener('change', changeElem(formData));
 btnElem.addEventListener('click', sendingData);
 
 const onFormSubmit = (event) => {
@@ -32,4 +42,4 @@ const onFormSubmit = (event) => {
   getData().then((resolt) => alert(JSON.stringify(resolt)));
 };
 
-formElem.addEventListener(`submit`, onFormSubmit);
+btnElem.addEventListener(`submit`, onFormSubmit);

@@ -11,3 +11,4 @@ export const createData = (data) =>
 
 export const getData = () =>
   fetch(baseUrl).then((resoponse) => resoponse.json());
+getData().then((res) => alert(JSON.stringify(res)));

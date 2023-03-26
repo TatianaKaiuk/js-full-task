@@ -11,6 +11,7 @@ export const clickOnDeleteBtn = (e) => {
   }
 
   const taskId = e.terget.dataset.id;
+  console.log(taskId);
   const tasksList = getItem('tasksList');
   tasksList.map((task) => {
     if (task.id === taskId) {

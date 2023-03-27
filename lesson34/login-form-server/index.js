@@ -15,7 +15,7 @@ formElem.addEventListener('change', changeInput);
 
 const sendingData = () => {
   const formData = Object.fromEntries(new FormData(formElem));
-  createData(formData).then(() => console.log(formData));
+  createData(formData);
   formElem.reset();
 };
 

@@ -5,17 +5,18 @@ const formElem = document.querySelector(`.login-form`);
 const inputElem = document.querySelector(`.form-input`);
 
 const changeInput = () => {
-  if (inputElem.reportValidity()) {
+  if (formElem.reportValidity()) {
     btnElem.removeAttribute('disabled');
   } else {
     btnElem.setAttribute('disabled', true);
   }
 };
-inputElem.addEventListener('change', changeInput);
+formElem.addEventListener('change', changeInput);
 
 const sendingData = () => {
   const formData = Object.fromEntries(new FormData(formElem));
   createData(formData).then(() => console.log(formData));
+  formElem.reset();
 };
 
 btnElem.addEventListener('click', sendingData);
@@ -24,6 +25,5 @@ const onFormSubmit = (event) => {
   event.preventDefault();
   getData().then((res) => alert(JSON.stringify(res)));
 };
-formElem.reset();
 
 btnElem.addEventListener(`click`, onFormSubmit);

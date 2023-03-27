@@ -11,7 +11,7 @@ const changeInput = () => {
     btnElem.setAttribute('disabled', true);
   }
 };
-formElem.addEventListener('change', changeInput);
+formElem.addEventListener('input', changeInput);
 
 const sendingData = () => {
   const formData = Object.fromEntries(new FormData(formElem));

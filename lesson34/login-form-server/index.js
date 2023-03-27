@@ -16,7 +16,6 @@ formElem.addEventListener('input', changeInput);
 const sendingData = () => {
   const formData = Object.fromEntries(new FormData(formElem));
   createData(formData);
-  formElem.reset();
 };
 
 btnElem.addEventListener('click', sendingData);
@@ -24,6 +23,7 @@ btnElem.addEventListener('click', sendingData);
 const onFormSubmit = (event) => {
   event.preventDefault();
   getData().then((res) => alert(JSON.stringify(res)));
+  formElem.reset('');
 };
 
 btnElem.addEventListener(`click`, onFormSubmit);

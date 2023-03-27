@@ -23,7 +23,7 @@ btnElem.addEventListener('click', sendingData);
 const onFormSubmit = (event) => {
   event.preventDefault();
   getData().then((res) => alert(JSON.stringify(res)));
-  formElem.reset('');
+  formElem.reset();
 };
 
 btnElem.addEventListener(`click`, onFormSubmit);

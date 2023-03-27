@@ -2,7 +2,7 @@ import { createData, getData } from './scripts/dataGetaway.js';
 
 const btnElem = document.querySelector(`.submit-button`);
 const formElem = document.querySelector(`.login-form`);
-const inputElem = document.querySelector(`.form-input`);
+// const inputElem = document.querySelector(`.form-input`);
 
 const changeInput = () => {
   if (formElem.reportValidity()) {
@@ -22,7 +22,7 @@ const sendingData = () => {
 btnElem.addEventListener('click', sendingData);
 
 const onFormSubmit = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   getData().then((res) => alert(JSON.stringify(res)));
 };
 

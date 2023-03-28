@@ -23,5 +23,12 @@ export const deleteTask = (taskId) =>
     method: 'DELETE',
   });
 
-export const getTasksList = () =>
-  fetch(baseUrl).then((resoponse) => resoponse.json());
+
+const mapTasks = (tasks) =>
+  tasks.map(({ _id, ...rest }) => ({ ...rest, id: _id }));
+
+export const getTasksList = () => {
+  return fetch(baseUrl)
+    .then((response) => response.json())
+    .then((tasks) => mapTasks(tasks));
+};

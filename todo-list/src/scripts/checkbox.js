@@ -2,7 +2,7 @@ import { renderTasks } from './render.js';
 import { setItem, getItem } from './storage.js';
 import { getTasksList, updateTask } from './tasksGateway.js';
 
-// const listElem = document.querySelector('.list');
+
 
 export const clickOnCheckbox = (event) => {
   const isCheckbox = event.target.classList.contains('list-item__checkbox');
@@ -11,7 +11,7 @@ export const clickOnCheckbox = (event) => {
     return;
   }
 
-  const taskId = event.terget.dataset.id;
+  const taskId = event.target.dataset.id;
 
   const tasksList = getItem('tasksList');
   const { text, createData } = tasksList.find((task) => task.id === taskId);

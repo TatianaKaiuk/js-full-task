@@ -30,14 +30,13 @@ const createListItem = ({ text, done, id }) => {
   const checkboxElem = createCheckbox({ done, id });
   checkboxElem.setAttribute('data-id', id);
   if (done) {
-    listItemElem.classList.add('list-item__done');
+    listItemElem.classList.add('list-item__done', 'list-item__text');
   }
   const deleteButton = document.createElement('button');
   deleteButton.classList.add('list-item__delete-btn');
   deleteButton.setAttribute('data-id', id);
 
   const textElem = document.createElement('span');
-  textElem.classList.add('list-item__text');
   textElem.setAttribute('data-id', id);
   textElem.textContent = text;
 

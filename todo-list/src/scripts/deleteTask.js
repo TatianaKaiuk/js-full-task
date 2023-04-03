@@ -3,7 +3,7 @@ import { setItem } from './storage.js';
 import { deleteTask, getTasksList } from './tasksGateway.js';
 
 export const clickOnDeleteBtn = (e) => {
-  const taskId = e.target.closest('.list-item').dataset.id;
+  const taskId = e.target.closest('.list-item__delete-btn').dataset.id;
 
   deleteTask(taskId)
     .then(getTasksList)

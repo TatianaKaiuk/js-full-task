@@ -3,9 +3,9 @@ import { renderTasks } from './render.js';
 import { getTasksList } from './tasksGateway.js';
 import { setItem } from './storage.js';
 
-document.addEventListener('DOMContentLoaded', () => { // после загрузки страницы получаем данные  сервера
+document.addEventListener('DOMContentLoaded', () => { 
   getTasksList().then((tasksList) => {
-    setItem('tasksList', tasksList); // и созраняем  локалсторедж
+    setItem('tasksList', tasksList);
     renderTasks();
   });
 

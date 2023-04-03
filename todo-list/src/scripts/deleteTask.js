@@ -1,23 +1,15 @@
 import { renderTasks } from './render.js';
-import { getItem, setItem } from './storage.js';
+import { setItem } from './storage.js';
 import { deleteTask, getTasksList } from './tasksGateway.js';
 
 export const clickOnDeleteBtn = (e) => {
-  const isDeleteBtn = e.target.classList.contains('list-item__delete-btn');
+  const taskId = e.target.closest('.list-item').dataset.id;
 
-  if (!isDeleteBtn) {
-    return;
-  }
-
-  const taskId = e.target.dataset.id;
-  console.log(taskId);
-
-  const tasksList = getItem('tasksList');
-  const id = tasksList.find((task) => task.id === taskId);
-  deleteTask(id)
-    .then(() => getTasksList())
+  deleteTask(taskId)
+    .then(getTasksList)
     .then((newTasksList) => {
       setItem('tasksList', newTasksList);
+
+      renderTasks();
     });
-  renderTasks();
 };

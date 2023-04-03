@@ -9,6 +9,6 @@ export const initTodoListHandlers = () => {
   const listElem = document.querySelector('.list');
   listElem.addEventListener(`click`, clickOnCheckbox);
 
-  // const deleteTaskElem = document.querySelector('.list-item__delete-btn');
-  // deleteTaskElem.addEventListener(`click`, clickOnDeleteBtn);
+  const deleteTaskElem = document.querySelector('.list-item__delete-btn');
+  deleteTaskElem.addEventListener(`click`, clickOnDeleteBtn);
 };

@@ -3,16 +3,15 @@ import { getItem, setItem } from './storage.js';
 import { deleteTask, getTasksList } from './tasksGateway.js';
 
 export const clickOnDeleteBtn = (e) => {
-  debugger;
   const isDeleteBtn = e.target.classList.contains('list-item__delete-btn');
 
   if (!isDeleteBtn) {
     return;
   }
-debugger;
+
   const taskId = e.target.dataset.id;
   console.log(taskId);
-debugger;
+
   const tasksList = getItem('tasksList');
   const id = tasksList.find((task) => task.id === taskId);
   deleteTask(id)
@@ -20,8 +19,5 @@ debugger;
     .then((newTasksList) => {
       setItem('tasksList', newTasksList);
     });
-    renderTasks();
+  renderTasks();
 };
-
-const deleteTaskElem = document.querySelector('.list-item__delete-btn');
-deleteTaskElem.addEventListener('click', clickOnDeleteBtn);
